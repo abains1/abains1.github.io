@@ -4,7 +4,7 @@ import { SlideContent } from "./SlideContent";
 import "./SlideShow.scss";
 
 interface SlideShow {
-  stories: story[] | null;
+  stories: story[];
   heading: string;
 }
 
@@ -18,12 +18,10 @@ export const SlideShow: React.FC<SlideShow> = ({ stories, heading }) => {
   //   increment slide every 10s and return to heading slide every 10s
   useEffect(() => {
     const interval = setInterval(() => {
-      if (stories != null) {
-        if (index == stories.length - 1) {
-          setIndex((prev) => 0);
-        } else {
-          setIndex((prev) => prev + 1);
-        }
+      if (index == stories.length) {
+        setIndex((prev) => 0);
+      } else {
+        setIndex((prev) => prev + 1);
       }
     }, 10000);
 
@@ -35,9 +33,7 @@ export const SlideShow: React.FC<SlideShow> = ({ stories, heading }) => {
       <div className="HeadingContainer">
         <div className="Heading">{heading}</div>
       </div>
-      {stories != null &&
-      index != stories.length &&
-      stories[index].title != null ? (
+      {index != stories.length && stories[index].title != null ? (
         <div className="Slide">
           <div className="SlideContent">
             <SlideContent

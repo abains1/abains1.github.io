@@ -23,5 +23,13 @@ export const SlideShowContainer: React.FC<SlideShowContainer> = ({
     getStories();
   }, [storiesURL]);
 
-  return <SlideShow stories={stories} heading={heading} />;
+  return (
+    <>
+      {stories != null ? (
+        <SlideShow stories={stories} heading={heading} />
+      ) : (
+        <>Loading...</>
+      )}
+    </>
+  );
 };
