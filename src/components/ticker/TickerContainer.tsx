@@ -16,7 +16,7 @@ export const TickerContainer: React.FC<TickerContainer> = ({
     async function getHeadlines() {
       await fetch(headlinesUrl)
         .then((res) => res.json())
-        .then((data) => setHeadlines(data));
+        .then((data) => setHeadlines((prev) => data));
     }
 
     getHeadlines();

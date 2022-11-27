@@ -11,11 +11,15 @@ interface SlideShow {
 export const SlideShow: React.FC<SlideShow> = ({ stories, heading }) => {
   const [index, setIndex] = useState<number>(0);
 
+  useEffect(() => {
+    setIndex((prev) => 0);
+  }, [stories]);
+
   //   increment slide every 10s and return to heading slide every 10s
   useEffect(() => {
     const interval = setInterval(() => {
       if (stories != null && index == stories.length) {
-        setIndex(0);
+        setIndex((prev) => 0);
       } else {
         setIndex((prev) => prev + 1);
       }

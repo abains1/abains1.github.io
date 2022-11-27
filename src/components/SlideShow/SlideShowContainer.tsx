@@ -18,7 +18,7 @@ export const SlideShowContainer: React.FC<SlideShowContainer> = ({
     async function getStories() {
       await fetch(storiesURL)
         .then((res) => res.json())
-        .then((data) => setStories(data as story[]));
+        .then((data) => setStories((prev) => data as story[]));
     }
 
     getStories();
