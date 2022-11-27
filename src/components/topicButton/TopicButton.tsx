@@ -15,7 +15,7 @@ export const TopicButton: React.FC<TopicButton> = ({
     if (topicIndex == numberTopics - 1) {
       setTopicIndex((prev) => 0);
     } else {
-      setTopicIndex((index) => index + 1);
+      setTopicIndex((prev) => prev + 1);
     }
   }
 

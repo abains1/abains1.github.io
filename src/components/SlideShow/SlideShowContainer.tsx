@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { story } from "../../interface/interface";
 import { SlideShow } from "./SlideShow";
-import "./SlideShowContainer.scss";
 
 interface SlideShowContainer {
   storiesURL: string;

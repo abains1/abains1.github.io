@@ -26,7 +26,7 @@ export const SlideShow: React.FC<SlideShow> = ({ stories, heading }) => {
     }, 10000);
 
     return () => clearInterval(interval);
-  }, [index]);
+  }, [index, stories]);
 
   return (
     <div className="SlideShow">
