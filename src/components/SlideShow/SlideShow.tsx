@@ -19,7 +19,7 @@ export const SlideShow: React.FC<SlideShow> = ({ stories, heading }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (stories != null) {
-        if (index == stories.length) {
+        if (index == stories.length - 1) {
           setIndex((prev) => 0);
         } else {
           setIndex((prev) => prev + 1);
@@ -28,7 +28,7 @@ export const SlideShow: React.FC<SlideShow> = ({ stories, heading }) => {
     }, 10000);
 
     return () => clearInterval(interval);
-  }, [index, stories]);
+  }, [index, stories, stories?.length]);
 
   return (
     <div className="SlideShow">
